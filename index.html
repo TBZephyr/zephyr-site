@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- TITLE -->
   <title>zephyr | Marketing for music, culture & entertainment</title>
 
   <!-- SEO -->
@@ -11,7 +12,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.zephyrcreative.co.uk/" />
 
-  <!-- Social preview -->
+  <!-- SOCIAL SHARING -->
   <meta property="og:title" content="zephyr — marketing for music, culture & entertainment" />
   <meta property="og:description" content="We build digital ecosystems that turn attention into owned fan relationships." />
   <meta property="og:type" content="website" />
@@ -20,22 +21,31 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://www.zephyrcreative.co.uk/Assets/Images/Sharing/zephyr_social_sharing.jpg" />
 
-  <!-- Tailwind -->
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-01D25C63QH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-01D25C63QH');
+  </script>
+
+  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Organisation schema -->
+  <!-- ORGANISATION SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "zephyr",
     "url": "https://www.zephyrcreative.co.uk/",
-    "logo": "https://www.zephyrcreative.co.uk/Assets/Logo/Zephyr%20Logo_Horizontal_No%20BG_White.png",
+    "logo": "https://www.zephyrcreative.co.uk/Assets/Logo/Zephyr Logo_Horizontal_No BG_White.png",
     "sameAs": [
       "https://www.instagram.com/zephyr_creative_/",
       "https://www.linkedin.com/company/zephyrcreativeservices/"
@@ -49,48 +59,20 @@
   </script>
 
   <style>
-    html, body { height: 100%; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0b1020;
       color: #ffffff;
     }
 
-    .text-gradient {
-      background-image: linear-gradient(to right, #EC4899, #8B5CF6);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .bg-brand-dark { background-color: #111827; }
-    .nav-link { transition: color 0.2s ease; }
-    .nav-link:hover { color: #EC4899; }
-
     .bg-hero {
       background-image:
         radial-gradient(900px circle at 20% 20%, rgba(236,72,153,.30), transparent 55%),
         radial-gradient(900px circle at 80% 30%, rgba(139,92,246,.32), transparent 55%),
-        linear-gradient(rgba(17,24,39,0.18), rgba(17,24,39,0.45)),
+        linear-gradient(rgba(17,24,39,0.2), rgba(17,24,39,0.45)),
         url('/Assets/Backgrounds/Zephyr_BG1.jpg');
       background-size: cover;
       background-position: center;
-    }
-
-    .bg-zephyr-gradient {
-      background:
-        radial-gradient(1200px circle at 20% 20%, rgba(236,72,153,0.22), transparent 60%),
-        radial-gradient(900px circle at 80% 30%, rgba(139,92,246,0.22), transparent 55%),
-        linear-gradient(180deg, rgba(17,24,39,0.96), rgba(17,24,39,0.96));
-    }
-
-    .section-sep { position: relative; }
-    .section-sep::before {
-      content:"";
-      position:absolute;
-      left:0; right:0; top:0;
-      height:1px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.10), transparent);
     }
 
     .card {
@@ -110,54 +92,71 @@
   </style>
 </head>
 
-<body class="antialiased">
+<body>
 
-<header class="bg-brand-dark text-white p-4 fixed w-full top-0 z-50 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <img src="/Assets/Logo/Zephyr%20Logo_Horizontal_No%20BG_White.png" class="h-8" alt="zephyr" />
-  </div>
-</header>
+<main>
 
-<main class="pt-16">
+  <!-- HERO -->
+  <section class="min-h-[90vh] flex items-center bg-hero text-center px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+        Marketing that thinks big<br />and puts you at the centre.
+      </h1>
+      <p class="text-xl text-white/85">
+        We build digital ecosystems that turn attention into owned fan relationships.
+      </p>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="py-24 bg-zephyr-gradient section-sep">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-6">About</h2>
-
-    <!-- CENTRALISED STATEMENT BLOCK -->
+  <!-- ABOUT -->
+  <section class="py-24 text-center px-6">
     <div class="max-w-3xl mx-auto space-y-4 text-lg text-white/80">
       <p>Fans have limited bandwidth and are careful about what they let in.</p>
       <p>Most audience value lives on platforms artists don’t control.</p>
       <p>The old marketing models don’t hold — long-term success requires ownership.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- NEXT STEPS -->
-<section id="contact" class="py-24 bg-hero section-sep text-center">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Next steps</h2>
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-hero text-center px-6">
+    <h2 class="text-4xl font-extrabold mb-4">Next steps</h2>
     <p class="text-white/80 mb-10">Get in touch</p>
 
     <div class="max-w-2xl mx-auto card p-8 text-left">
       <form id="contactForm" class="space-y-4">
-        <input class="input" type="text" placeholder="Name" required />
-        <input class="input" type="email" placeholder="Email" required />
-        <textarea class="input" rows="5" placeholder="Message" required></textarea>
-        <button class="bg-pink-500 px-8 py-3 rounded-full font-bold">Send</button>
+        <input class="input" type="text" name="name" placeholder="Name" required />
+        <input class="input" type="email" name="email" placeholder="Email" required />
+        <textarea class="input" name="message" rows="5" placeholder="Message" required></textarea>
+        <button type="submit" class="bg-pink-500 px-8 py-3 rounded-full font-bold">
+          Send
+        </button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="bg-gray-900 py-8 text-center">
   <p class="text-xs text-gray-500 mt-2">
     Based in Brighton, London, United Kingdom and around the world 🌍
   </p>
 </footer>
+
+<!-- GA FORM TRACKING -->
+<script>
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'contact_form_submit', {
+          form_name: 'main_contact_form',
+          page_location: window.location.href
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
