@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>zephyr | Marketing systems for music, culture & entertainment</title>
+
+  <!-- SEO -->
+  <meta name="description" content="zephyr builds connected digital marketing systems that turn attention into owned fan relationships — across discovery, first-party data, user experience and direct-to-fan revenue." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.zephyrcreative.co.uk/" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="zephyr — marketing systems for music, culture & entertainment" />
+  <meta property="og:description" content="We build connected digital systems that turn attention into owned fan relationships." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.zephyrcreative.co.uk/" />
+  <meta property="og:image" content="https://www.zephyrcreative.co.uk/Assets/Backgrounds/Zephyr_BG1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b1020;
+      color: #ffffff;
+    }
+
+    .text-gradient {
+      background-image: linear-gradient(to right, #EC4899, #8B5CF6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .bg-brand-dark { background-color: #111827; }
+
+    .nav-link { transition: color 0.2s ease; }
+    .nav-link:hover { color: #EC4899; }
+
+    /* HERO */
+    .bg-hero {
+      background-image:
+        radial-gradient(900px circle at 20% 20%, rgba(236,72,153,.30), transparent 55%),
+        radial-gradient(900px circle at 80% 30%, rgba(139,92,246,.32), transparent 55%),
+        linear-gradient(rgba(17,24,39,0.18), rgba(17,24,39,0.45)),
+        url('/Assets/Backgrounds/Zephyr_BG1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* SECTION BASE GRADIENT */
+    .bg-zephyr-gradient {
+      background:
+        radial-gradient(1200px circle at 20% 20%, rgba(236,72,153,0.22), transparent 60%),
+        radial-gradient(900px circle at 80% 30%, rgba(139,92,246,0.22), transparent 55%),
+        linear-gradient(180deg, rgba(17,24,39,0.96), rgba(17,24,39,0.96));
+    }
+
+    /* IMAGE-BACKED SECTIONS (with overlay) */
+    .bg-ecosystem-img {
+      background-image:
+        radial-gradient(900px circle at 70% 20%, rgba(139,92,246,.18), transparent 55%),
+        linear-gradient(rgba(17,24,39,0.80), rgba(17,24,39,0.94)),
+        url('/Assets/Images/Ecosystem.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bg-who-img {
+      background-image:
+        radial-gradient(900px circle at 20% 20%, rgba(236,72,153,.14), transparent 60%),
+        linear-gradient(rgba(17,24,39,0.76), rgba(17,24,39,0.94)),
+        url('/Assets/Images/Who%20We%20Work%20With.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bg-tech-img {
+      background-image:
+        radial-gradient(900px circle at 25% 25%, rgba(99,102,241,.20), transparent 55%),
+        linear-gradient(rgba(17,24,39,0.82), rgba(17,24,39,0.94)),
+        url('/Assets/Images/Technology.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Subtle section separators */
+    .section-sep { position: relative; }
+    .section-sep::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.10), transparent);
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      border-radius: 1rem;
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+    }
+    .card-balanced { min-height: 160px; }
+
+    /* Team avatars */
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 9999px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.22);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    /* Logo marquee */
+    .logo-marquee {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    .logo-track {
+      display: flex;
+      gap: 2.75rem;
+      width: max-content;
+      align-items: center;
+      animation: marquee 34s linear infinite;
+    }
+    .logo-marquee:hover .logo-track { animation-play-state: paused; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .client-logo {
+      height: 44px;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Footer socials */
+    .social-icon { width: 22px; opacity: 0.85; transition: opacity .2s ease; }
+    .social-icon:hover { opacity: 1; }
+
+    /* Form */
+    .input {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      padding: 12px 14px;
+      color: #fff;
+      outline: none;
+    }
+    .input::placeholder { color: rgba(255,255,255,0.55); }
+    .input:focus { border-color: rgba(236,72,153,0.55); box-shadow: 0 0 0 3px rgba(236,72,153,0.18); }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-brand-dark text-white p-4 fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#top" class="flex items-center">
+        <img src="/Assets/Logo/Zephyr Logo_Horizontal_No BG_White.png" alt="Zephyr" class="h-8 w-auto" />
+      </a>
+
+      <nav class="hidden md:flex space-x-6 items-center">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#ecosystem" class="nav-link">Ecosystem</a>
+        <a href="#who" class="nav-link">Who we work with</a>
+        <a href="#tech" class="nav-link">Technology</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#contact"
+           class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+          Get in touch
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="pt-16">
+
+    <!-- HERO -->
+    <section class="min-h-[92vh] flex items-center bg-hero text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+          Marketing that <span class="text-gradient">thinks big</span><br/>and puts you at the centre.
+        </h1>
+        <p class="text-lg md:text-xl text-white/85 mb-10 max-w-3xl mx-auto">
+          We build connected digital systems that turn attention into owned fan relationships.
+        </p>
+
+        <div class="mt-2 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#who"
+             class="bg-violet-500 hover:bg-violet-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+            Who we work with
+          </a>
+          <a href="#contact"
+             class="bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300">
+            Contact us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-zephyr-gradient text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3">About</h2>
+        <p class="text-white/70 mb-10">Attention is rented. We help you own the relationship.</p>
+
+        <ul class="max-w-3xl mx-auto space-y-3 text-lg text-white/80 text-left">
+          <li>Fans have limited bandwidth and are careful about what they let in.</li>
+          <li>Most audience value lives on platforms artists don’t control.</li>
+          <li>The old marketing models don’t hold — long-term success requires ownership.</li>
+        </ul>
+
+        <div class="mt-10 grid md:grid-cols-4 gap-6 text-left">
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">Discovery</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Reach the right people, in the right places.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">First-party data</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Capture demand and build owned audiences.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">User experience</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Make the journey frictionless and intentional.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">Direct revenue</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Convert intention into tickets, D2C and repeat value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section id="ecosystem" class="py-28 bg-ecosystem-img text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Ecosystem</h2>
+        <p class="text-white/70 mb-12 max-w-3xl mx-auto">
+          One connected system. Not fragmented activity. Over time, growth compounds.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 text-left max-w-5xl mx-auto">
+          <div class="card p-7 card-balanced">
+            <h3 class="font-bold text-lg mb-2">Compounding growth</h3>
+            <p class="text-white/70 leading-relaxed">
+              Not every campaign touches every layer — but over time they connect. When they do, growth compounds.
+              You’re building an engine, not a moment.
+            </p>
+          </div>
+          <div class="card p-7 card-balanced">
+            <h3 class="font-bold text-lg mb-2">Less-is-more</h3>
+            <p class="text-white/70 leading-relaxed">
+              Efficiency over the most expensive tool. Data ownership over vanity metrics. Systems over stunts.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-4 gap-6 text-left">
+          <div class="card p-6 card-balanced">
+            <h4 class="font-bold mb-1">Audience growth</h4>
+            <p class="text-white/70 text-sm">Reach + relevance</p>
+            <p class="text-white/70 text-sm mt-3 leading-relaxed">
+              Creative, media and positioning that earns attention without burning trust.
+            </p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h4 class="font-bold mb-1">Fan capture</h4>
+            <p class="text-white/70 text-sm">Email/SMS + CRM</p>
+            <p class="text-white/70 text-sm mt-3 leading-relaxed">
+              Incentives and flows that convert curiosity into owned relationships.
+            </p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h4 class="font-bold mb-1">Direct revenue</h4>
+            <p class="text-white/70 text-sm">Tickets + D2C</p>
+            <p class="text-white/70 text-sm mt-3 leading-relaxed">
+              D2C stores, bundles, pre-sales and launches that feel intentional.
+            </p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h4 class="font-bold mb-1">Repeat engagement</h4>
+            <p class="text-white/70 text-sm">Retention + LTV</p>
+            <p class="text-white/70 text-sm mt-3 leading-relaxed">
+              Turn one-off moments into a world people return to.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 card p-8 text-left max-w-5xl mx-auto">
+          <p class="text-white/80 leading-relaxed">
+            The wins aren’t magic. The method is. We’ll share the playbook — the advantage is
+            <span class="font-semibold text-white">execution</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE WORK WITH -->
+    <section id="who" class="py-28 bg-who-img text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Who we work with</h2>
+        <p class="text-white/70 mb-12">Artists, labels, managers and creative brands.</p>
+
+        <div class="logo-marquee">
+          <div id="logoTrack" class="logo-track"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="tech" class="py-28 bg-tech-img text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Technology</h2>
+        <p class="text-white/70 mb-12 max-w-3xl mx-auto">
+          CRM, tracking and creative — built as a system, not a one-off campaign.
+        </p>
+
+        <div class="grid md:grid-cols-4 gap-6 text-left">
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">CRM architecture</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Segmentation, automations, templates and data hygiene.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">Tracking & measurement</h3>
+            <p class="text-white/70 text-sm leading-relaxed">QA, attribution and reporting focused on actions you can take.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">Conversion UX</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Landing pages, sign-up incentives and frictionless flows.</p>
+          </div>
+          <div class="card p-6 card-balanced">
+            <h3 class="font-bold mb-2">Paid & optimisation</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Meta, TikTok, Google, YouTube, Spotify + iteration loops.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="py-24 bg-zephyr-gradient text-white section-sep">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-3">Meet the team</h2>
+        <p class="text-white/70 mb-12">Senior, hands-on operators — strategy through to execution.</p>
+
+        <div class="flex flex-col md:flex-row justify-center gap-10">
+          <div class="card p-8 w-full md:w-[460px] text-left">
+            <div class="flex items-center gap-6">
+              <img src="/Assets/Team/Walter.jpg" alt="Walter Aldaz" class="avatar" />
+              <div>
+                <h3 class="font-bold text-xl">Walter Aldaz</h3>
+                <p class="text-white/70 font-semibold">Business Operations Director</p>
+              </div>
+            </div>
+            <p class="text-white/75 mt-5 leading-relaxed">
+              Operational leadership, delivery structure and accountability — ensuring the system runs and scales.
+            </p>
+          </div>
+
+          <div class="card p-8 w-full md:w-[460px] text-left">
+            <div class="flex items-center gap-6">
+              <img src="/Assets/Team/Tom.jpg" alt="Tom Burris" class="avatar" />
+              <div>
+                <h3 class="font-bold text-xl">Tom Burris</h3>
+                <p class="text-white/70 font-semibold">Creative Technology Director</p>
+              </div>
+            </div>
+            <p class="text-white/75 mt-5 leading-relaxed">
+              Digital systems, CRM architecture and conversion-led creative — bridging strategy, technology and fan experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (FORM) -->
+    <section id="contact" class="py-24 bg-hero text-white text-center section-sep">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Next steps</h2>
+        <p class="text-white/80 mb-10">Send a message — we’ll reply quickly.</p>
+
+        <div class="max-w-2xl mx-auto text-left card p-8">
+          <form id="contactForm" class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold mb-2">Name</label>
+              <input class="input" type="text" name="name" id="name" placeholder="Your name" required maxlength="120" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2">Email</label>
+              <input class="input" type="email" name="email" id="email" placeholder="you@company.com" required maxlength="200" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2">Message</label>
+              <textarea class="input" name="message" id="message" placeholder="Tell us what you’re working on…" rows="6" required maxlength="5000"></textarea>
+            </div>
+
+            <div class="pt-2 flex flex-col sm:flex-row gap-3 items-center">
+              <button id="submitBtn"
+                      type="submit"
+                      class="bg-pink-500 hover:bg-pink-600 px-10 py-3 rounded-full font-extrabold text-lg transition-colors duration-300">
+                Send
+              </button>
+              <p id="formStatus" class="text-sm text-white/80"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="https://www.instagram.com/zephyr_creative_/" target="_blank" rel="noopener">
+        <img src="/Assets/Socials/Instagram_w.png" class="social-icon" alt="Instagram" />
+      </a>
+      <a href="https://www.linkedin.com/company/zephyrcreativeservices/" target="_blank" rel="noopener">
+        <img src="/Assets/Socials/LinkedIn_w.png" class="social-icon" alt="LinkedIn" />
+      </a>
+    </div>
+    <p class="text-sm text-gray-400">© <span id="year"></span> zephyr. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Client logo list (defensive: if any path 404s, it won’t break the marquee)
+    const clientLogos = [
+      "/Assets/Clients/Allie_X_logo.png",
+      "/Assets/Clients/EastCity_Logo.png",
+      "/Assets/Clients/Submarine Cat_logo.png",
+      "/Assets/Clients/Strap Originals_Logo.png",
+      "/Assets/Clients/House Anxiety_logo.png",
+      "/Assets/Clients/Mushroom Group.png",
+      "/Assets/Clients/Wolf Alice_logo.png",
+      "/Assets/Clients/alt-J_Logo.png",
+      "/Assets/Clients/Columbia_Records_logo.png",
+      "/Assets/Clients/AWAL_Logo.png",
+      "/Assets/Clients/Republic of Music_logo.png",
+      "/Assets/Clients/Maribou State_Logo.png",
+      "/Assets/Clients/tom-cooper.png",
+      "/Assets/Clients/Island_Records_logo.svg"
+    ];
+
+    const track = document.getElementById('logoTrack');
+    if (track) {
+      const all = clientLogos.concat(clientLogos);
+      all.forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = "client-logo";
+        img.alt = "";
+        img.loading = "lazy";
+        img.onerror = () => img.remove();
+        track.appendChild(img);
+      });
+    }
+
+    // Contact form submission to Cloudflare Pages Function (/api/contact)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function setStatus(msg, ok = true) {
+      statusEl.textContent = msg;
+      statusEl.style.color = ok ? "rgba(255,255,255,0.85)" : "rgba(255,180,180,0.95)";
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus("");
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.75";
+
+        const payload = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          message: document.getElementById('message').value.trim(),
+        };
+
+        try {
+          const resp = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await resp.json().catch(() => ({}));
+
+          if (!resp.ok || !data.ok) {
+            const detail = data && (data.error || data.detail) ? ` (${data.error || data.detail})` : "";
+            throw new Error(`Message failed${detail}`);
+          }
+
+          form.reset();
+          setStatus("Sent. We’ll get back to you shortly.");
+        } catch (err) {
+          setStatus("Couldn’t send right now. Please email info@zephyrcreative.co.uk.", false);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
